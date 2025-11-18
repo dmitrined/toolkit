@@ -24,7 +24,7 @@ export default function SandwichRedux(): JSX.Element {
 
   return (
     <div className={styles.container} >
-      <h2>Sandwich (Redux Toolkit + TS)</h2>
+      <h2>Sandwich (Redux Toolkit)</h2>
       <input 
         type="text" 
         value={sandwichText} 
@@ -33,7 +33,7 @@ export default function SandwichRedux(): JSX.Element {
       />
 
       <div className={styles.btnContainer}>
-        {/* Кнопки для добавления ингредиентов */}
+       
         <button type="button" onClick={() => handleAddIngredient("🍞")} className={styles.btn}>
           🍞
         </button>
