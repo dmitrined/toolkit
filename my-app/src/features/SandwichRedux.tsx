@@ -1,10 +1,10 @@
 
 import type { JSX } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import type { RootState } from "../app/store";
+import type { RootState, AppDispatch } from "../app/store";
 import { addIngredient, reset } from "./sandwich/sandwichSlice"; 
 import styles from "./SandwichRedux.module.css";
-import type { AppDispatch } from "../app/store"; // Импортируем AppDispatch для типизации
+
 
 export default function SandwichRedux(): JSX.Element {
   const dispatch: AppDispatch = useDispatch();
