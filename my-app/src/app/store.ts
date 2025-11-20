@@ -1,36 +1,19 @@
+import { configureStore } from "@reduxjs/toolkit";
+import counterReducer from '../features/counter/counterSlice'
+import usersReducer from '../features/users/usersSlice'
+import productsReducer from '../features/products/productsSlice'
 
-import type { Action, ThunkAction } from "@reduxjs/toolkit"
-import { combineSlices, configureStore } from "@reduxjs/toolkit"
-import { sandwichSlice } from "../features/sandwich/sandwichSlice" 
+//→ Импортируем configureStore — простой способ создать store.
+export const store = configureStore({
+    reducer: {
+        counter: counterReducer,
+        users: usersReducer,
+        products: productsReducer,
+    }
+})
 
+// Типы для useSelector и useDispatch
 
-const rootReducer = combineSlices(
-  sandwichSlice 
-)
-
-export type RootState = ReturnType<typeof rootReducer>
-
-export const makeStore = (preloadedState?: Partial<RootState>) => {
-  const store = configureStore({
-    reducer: rootReducer,
-   
-    middleware: getDefaultMiddleware => {
-      return getDefaultMiddleware()
-    },
-    preloadedState,
-  })
-  
-  
-  return store
-}
-
-export const store = makeStore()
-
-export type AppStore = typeof store
-export type AppDispatch = AppStore["dispatch"]
-export type AppThunk<ThunkReturnType = void> = ThunkAction<
-  ThunkReturnType,
-  RootState,
-  unknown,
-  Action
->
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
+// → Создаём типы для селектора и диспатчера, чтобы использовать в TS-компонентах.
