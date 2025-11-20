@@ -24,7 +24,7 @@ export const App = (): JSX.Element=> (
           hover:border-gray-700
         "
         target="_blank"
-        href="https://github.com/dmitrined/reactAit/tree/main/my-redux-app/src/components/HW/HW10"
+        href="https://github.com/dmitrined/toolkit/tree/main/my-app/src/features/products"
       >
         Посмотреть код этой страницы на GitHub
       </a>
