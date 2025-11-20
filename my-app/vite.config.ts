@@ -4,6 +4,7 @@ import { defineConfig } from "vitest/config"
 import packageJson from "./package.json" with { type: "json" }
 import tailwindcss from '@tailwindcss/vite'
 
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(),  tailwindcss(),],
@@ -26,4 +27,5 @@ export default defineConfig({
     watch: false,
     setupFiles: ["./src/setupTests.ts"],
   },
+   base: '/toolkit/',
 })
