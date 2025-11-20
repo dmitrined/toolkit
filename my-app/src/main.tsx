@@ -4,18 +4,21 @@ import { StrictMode } from "react"
 import { App } from "./App"
 import { createRoot } from "react-dom/client" // <--- Правильный импорт
 import { Provider } from "react-redux"
+import { BrowserRouter } from "react-router-dom"
 import { store } from "./app/store" // Убедитесь, что store корректно экспортируется
 
 const container = document.getElementById("root")
 
 if (container) {
   // Используем импортированную функцию createRoot
-  const root = createRoot(container) 
+  const root = createRoot(container)
 
   root.render(
     <StrictMode>
       <Provider store={store}>
+      <BrowserRouter basename="/toolkit" > 
         <App />
+      </BrowserRouter>
       </Provider>
     </StrictMode>,
   )

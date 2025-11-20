@@ -5,8 +5,8 @@
   "type": "module",
   "homepage": "https://dmitrined.github.io/toolkit",
   "scripts": {
-    "predeploy": "npm run build",   
-  "deploy": "gh-pages -d dist",   
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "tsc -b && vite build",
     "dev": "vite",
     "format:check": "prettier --check .",
@@ -28,6 +28,7 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-redux": "^9.2.0",
+    "react-router-dom": "^7.9.6",
     "tailwindcss": "^4.1.17"
   },
   "devDependencies": {
